@@ -1,12 +1,17 @@
 ﻿#pragma strict
 
 private var cornState : boolean = false;
+private var isDuringCorn : boolean = false;
 private var startTime : float;
 
 function Update () {
 	if(isFood()){
 		return;
 	}
+	randomPositioning();
+}
+
+function randomPositioning(){
 	var rand = parseInt(Random.Range(0.0 ,500.0));
 	switch(rand){
 		case 1 :
@@ -30,10 +35,6 @@ function Update () {
 			y = 0;
 			break;
 	}
-	positioning(x,y);
-}
-
-function positioning(x : int , y : int){
 	if(x == 0 && y == 0){
 		return;
 	}
@@ -58,12 +59,12 @@ function isFood(){
 	
 	return true;
 }
-
-function OnTriggerStay(c : Collider){
+/*
+function OnTriggerStay2D(c : Collider2D){
 	Debug.Log(c.gameObject.transform.name);
 	if(c.gameObject.transform.name == "Corn(Clone)"){
 		//var cornComp = c.GetComponents(Corn);
 		
 		//cornComp.eated(); 
 	}
-}
+}*/
