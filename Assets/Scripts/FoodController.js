@@ -28,6 +28,7 @@ function Update () {
 			}
 			if(touchObject[i].gameObject.name == "Corn(Clone)"){
 				cornClone = touchObject[i].gameObject;
+				cornClone.GetComponent(Corn).isActive = false;
 				isHoldCorn = true;
 				break;
 			}
@@ -42,6 +43,7 @@ function Update () {
 	}
 
 	if((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0) ){
+		cornClone.GetComponent(Corn).isActive = true;
 		isHoldCorn = false;
 	}
 
