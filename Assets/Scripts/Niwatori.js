@@ -115,6 +115,11 @@ function isFood(){
 	return true;
 }
 
+function OnTriggerEnter2D(c : Collider2D){
+	if(c.gameObject.transform.name == "Corn(Clone)"){
+		audio.Play();
+	}
+}
 
 function OnTriggerStay2D(c : Collider2D){
 	if(c.gameObject.transform.name == "Corn(Clone)"){
