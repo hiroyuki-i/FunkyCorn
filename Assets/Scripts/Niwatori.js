@@ -96,7 +96,7 @@ function isFood(){
 			}
 		}
 		Debug.Log(gameObject.GetInstanceID() + ":" + chickenCountToVacantestCorn);
-		if(chickenCountToVacantestCorn < chickenCountInNearestCorn){
+		if(chickenCountToVacantestCorn < chickenCountInNearestCorn && chickenCountToVacantestCorn == 0){
 			targetCorn = Corns[vacantestCornIndex];
 		}else{
 			targetCorn = Corns[nearestCornIndex];
